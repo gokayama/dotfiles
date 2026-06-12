@@ -1,0 +1,87 @@
+configuration {
+    display-drun: ":";
+    modi: "drun";
+    font: "Iosevka Mono Nerd Font 13";
+    icon-theme: "Nordzy";
+    show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+    bg:      #2e3440;
+    bg-alt:  #3b4252;
+   
+    fg:       #d8dee9;
+    fg-alt:   #e5e9f0;
+
+
+    background-color: @bg;
+    text-color: @fg;
+}
+
+/* ---------------- WINDOW ---------------- */
+window {
+    width: 360px;
+    height: 380px;
+
+    background-color: @bg;
+    border: 1px;
+    border-color: @bg-alt;
+
+    border-radius: 0px;
+}
+
+/* ---------------- LAYOUT ---------------- */
+mainbox {
+    background-color: @bg;
+}
+
+/* ---------------- INPUT ---------------- */
+inputbar {
+    background-color: transparent;
+    children: [prompt, entry];
+    margin: 6px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 0px 6px;
+}
+
+/* ---------------- LIST ---------------- */
+listview {
+    background-color: transparent;
+    spacing: 4px;
+}
+
+/* ---------------- ELEMENTS ---------------- */
+element {
+    background-color: transparent;
+    text-color: @fg;
+    padding: 10px 6px;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @fg-alt;
+}
+
+/* ---------------- ICONS ---------------- */
+element-icon {
+    size: 25px;
+    padding: 0px 10px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    vertical-align: 0.5;
+    text-color: inherit;
+}

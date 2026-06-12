@@ -1,0 +1,14 @@
+set $mod Mod4
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -show drun
+
+exec waybar
+exec dunst
+
+floating_modifier $mod
+
+gaps inner 10
+gaps outer 5
+
+default_border pixel 2

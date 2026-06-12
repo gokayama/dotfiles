@@ -1,0 +1,96 @@
+set $mod Mod4
+font pango:Iosveka Mono Nerd 10
+
+floating_modifier $mod normal
+
+bindsym $mod+Return exec foot 
+bindsym $mod+space exec rofi -show drun -config ~/.config/rofi/rofi.rasi
+bindsym $mod+w kill
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+
+bindsym $mod+r reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+bindsym Shift+Print exec grim
+
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always waybar &
+exec --no-startup-id swaybg -i ~/Pictures/nixos-wall.jpg -m fill   
+exec_always dunst &
+
+#monitor shit
+output HDMI-A-1 mode 1920x1080@143.981Hz position 0 0
+output eDP-1 mode 1366x768@60.059Hz position 1920 0
+
+
+
+default_border pixel 2
+
+
+
+#SET COLORS
+# Core colors
+set $bg      #181B1F
+set $bg-alt  #242A2D
+
+set $fg      #E6ECEA
+set $fg-alt  #8E9CA1
+
+# Wallpaper accents
+set $blue    #4C9AA4
+set $green   #79B978
+
+client.focused          $blue   $blue   $fg      $blue   $blue
+client.focused_inactive $bg-alt $bg-alt $fg-alt  $bg-alt $bg-alt
+client.unfocused        $bg     $bg     $fg-alt  $bg     $bg
+client.urgent           $green  $green  $bg      $green  $green
+
+
+gaps inner 1
+
+output * bg #1e1e2e solid_color
+
+# set keyboard and trackpad
+	input "type:keyboard"	{
+		xkb_layout br
+		xkb_variant abnt2
+		xkb_model abnt2
+	}
+
+	input "type:touchpad"	{
+		tap enabled
+		natural_scroll enabled
+	}

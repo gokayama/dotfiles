@@ -1,0 +1,23 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["battery"],
+
+  "clock": {
+    "format": "{:%H:%M}"
+  },
+
+  "battery": {
+    "format": "Bat {capacity}%",
+    "format-charging": "Chg {capacity}%",
+    "format-plugged": "Plug {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  }
+}
